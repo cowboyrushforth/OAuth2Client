@@ -627,6 +627,7 @@ NSString * const kNXOAuth2AccountStoreAccountType = @"kNXOAuth2AccountStoreAccou
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:accounts];
     NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:
                            (__bridge NSString *)kSecClassGenericPassword, kSecClass,
+	                   kSecAttrAccessibleAlways, kSecAttrAccessible,
                            serviceName, kSecAttrService,
                            @"OAuth 2 Account Store", kSecAttrLabel,
                            data, kSecAttrGeneric,
